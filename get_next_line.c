@@ -6,25 +6,38 @@
 /*   By: anben <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:35:35 by anben             #+#    #+#             */
-/*   Updated: 2019/07/02 15:26:00 by anben            ###   ########.fr       */
+/*   Updated: 2019/07/02 15:59:42 by anben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static	char *ft_jointostr(char *str, char *buff)
+static	char	*ft_jointostr(char *str, char *buff)
 {
 	char *limited;
 
+	if (!str)
+		return (NULL);
 	limited = ft_strjoin(str, buff);
 	free(str);
 	return (limited);
 }
-int	get_next_line(const int fd, char **line)
+
+static char		*ft_searchline(char **line, char *str)
 {
-	static char *str[1024];
-	char buff[BUFF_SIZE + 1];
-	int res;
+	int stri;
+
+	stri = 0;
+	while (str[stri] && str[stri] != '\n')
+		stri++;
+	return (str);
+}
+
+int				get_next_line(const int fd, char **line)
+{
+	static char	*str[1024];
+	char		buff[BUFF_SIZE + 1];
+	int			res;
 
 	res = 0;
 	if (!(line) || read(fd, buff, 0) == -1 || fd < 0)
@@ -42,7 +55,7 @@ int	get_next_line(const int fd, char **line)
 		}
 	}
 	if (res == 0 && !(ft_strlen(str[fd])))
-			return (0);
-			str[fd] = //....;
+		return (0);
+	str[fd] = ft_searchline(line, str[fd]);
 	return (1);
 }
