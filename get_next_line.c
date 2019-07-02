@@ -6,12 +6,20 @@
 /*   By: anben <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:35:35 by anben             #+#    #+#             */
-/*   Updated: 2019/07/02 14:56:28 by anben            ###   ########.fr       */
+/*   Updated: 2019/07/02 15:26:00 by anben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+static	char *ft_jointostr(char *str, char *buff)
+{
+	char *limited;
+
+	limited = ft_strjoin(str, buff);
+	free(str);
+	return (limited);
+}
 int	get_next_line(const int fd, char **line)
 {
 	static char *str[1024];
@@ -27,14 +35,14 @@ int	get_next_line(const int fd, char **line)
 	{
 		while ((res = read(fd, buff, BUFF_SIZE)) > 0)
 		{
-			buff[ret] = '\0';
-			str[fd] = .....
-				if (ft_strchr(str[fd], '\n'))
-					break ;
+			buff[res] = '\0';
+			str[fd] = ft_jointostr(str[fd], buff);
+			if (ft_strchr(str[fd], '\n'))
+				break ;
 		}
 	}
-	if (res == 0 && !(ft_strlen(str[fd]))
+	if (res == 0 && !(ft_strlen(str[fd])))
 			return (0);
-			str[fd] =
+			str[fd] = //....;
 	return (1);
 }
