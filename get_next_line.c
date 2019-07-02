@@ -6,7 +6,7 @@
 /*   By: anben <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:35:35 by anben             #+#    #+#             */
-/*   Updated: 2019/07/02 14:35:50 by anben            ###   ########.fr       */
+/*   Updated: 2019/07/02 14:56:28 by anben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,9 @@ int	get_next_line(const int fd, char **line)
 				if (ft_strchr(str[fd], '\n'))
 					break ;
 		}
-	return (0);
+	}
+	if (res == 0 && !(ft_strlen(str[fd]))
+			return (0);
+			str[fd] =
+	return (1);
 }
