@@ -6,7 +6,7 @@
 /*   By: anben <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:35:35 by anben             #+#    #+#             */
-/*   Updated: 2019/07/02 15:59:42 by anben            ###   ########.fr       */
+/*   Updated: 2019/07/02 16:29:10 by anben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,21 @@ static	char	*ft_jointostr(char *str, char *buff)
 
 static char		*ft_searchline(char **line, char *str)
 {
-	int stri;
+	int		strl;
+	char	*lim;
 
-	stri = 0;
-	while (str[stri] && str[stri] != '\n')
-		stri++;
-	return (str);
+	strl = 0;
+	while (str[strl] && str[strl] != '\n')
+		strl++;
+	*line = ft_strsub(str, 0, strl);
+	if (ft_strcmp(*line, str) == 0)
+		return (NULL);
+	else
+	{
+		lim = ft_strsub(str, strl + 1,(ft_strlen(str + strl + 1)));
+		free(str);
+	}
+	return (lim);
 }
 
 int				get_next_line(const int fd, char **line)
