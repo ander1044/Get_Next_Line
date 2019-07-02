@@ -6,7 +6,7 @@
 /*   By: anben <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:16:10 by anben             #+#    #+#             */
-/*   Updated: 2019/06/28 14:27:10 by anben            ###   ########.fr       */
+/*   Updated: 2019/07/02 14:26:12 by anben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <unistd.h>
 # include <fcntl.h>
+# include "./libft/libft.h"
 
 int	get_next_line(const int fd, char **line);
 #endif

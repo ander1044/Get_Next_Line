@@ -6,7 +6,7 @@
 /*   By: anben <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:35:35 by anben             #+#    #+#             */
-/*   Updated: 2019/07/02 14:04:45 by anben            ###   ########.fr       */
+/*   Updated: 2019/07/02 14:35:50 by anben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,16 @@ int	get_next_line(const int fd, char **line)
 	res = 0;
 	if (!(line) || read(fd, buff, 0) == -1 || fd < 0)
 		return (-1);
+	if (str[fd] == NULL)
+		str[fd] = ft_strnew(0);
+	if (!(ft_strchr(str[fd], '\n')))
+	{
+		while ((res = read(fd, buff, BUFF_SIZE)) > 0)
+		{
+			buff[ret] = '\0';
+			str[fd] = .....
+				if (ft_strchr(str[fd], '\n'))
+					break ;
+		}
 	return (0);
 }
