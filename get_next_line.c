@@ -6,22 +6,11 @@
 /*   By: anben <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 14:35:35 by anben             #+#    #+#             */
-/*   Updated: 2019/07/02 16:29:10 by anben            ###   ########.fr       */
+/*   Updated: 2019/07/03 13:07:09 by anben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-static	char	*ft_jointostr(char *str, char *buff)
-{
-	char *limited;
-
-	if (!str)
-		return (NULL);
-	limited = ft_strjoin(str, buff);
-	free(str);
-	return (limited);
-}
 
 static char		*ft_searchline(char **line, char *str)
 {
@@ -36,7 +25,7 @@ static char		*ft_searchline(char **line, char *str)
 		return (NULL);
 	else
 	{
-		lim = ft_strsub(str, strl + 1,(ft_strlen(str + strl + 1)));
+		lim = ft_strsub(str, strl + 1, (ft_strlen(str + strl + 1)));
 		free(str);
 	}
 	return (lim);
