@@ -1,5 +1,5 @@
 # Get_Next_Line
-GNL is a function that returns a line read from a file descriptor in C-Language.
+GNL (getline system built function)is a function that returns a line read from a file descriptor in C-Language.
 
 # The function does the following:
 1. Extracts character up to the terminator('\n').
